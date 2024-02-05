@@ -1,7 +1,7 @@
 import React from "react";
 import HomeTyping from './HomeTyping'
 import "./Home.css";
-import "../index.css"
+import "../main.css"
 
 const Home: React.FC = () => {
   return (

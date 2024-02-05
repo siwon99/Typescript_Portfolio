@@ -1,0 +1,198 @@
+/* Global */
+:root {
+  /* Color */
+
+  /* Font size */
+--font-large: 48px;
+--font-small-large: 35px;
+--font-medium: 28px;
+--font-regular: 18px;
+--font-small: 16px;
+--font-micro: 14px;
+
+  /* Font weight */
+--weight-bold: 700;
+--weight-semi-bold: 600;
+--weight-regular: 400;
+
+  /* Size */
+--size-border-radius: 6px;
+
+/* Animation */
+--animation-duration: 300ms;
+}
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+/* Typoraphy */
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: #000;
+  margin: 50px 0px 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: #000;
+  margin: 8px 0px;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: #000;
+  margin: 8px 0px;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: #000;
+  margin: 4px 0px;
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
+  .navbar__toggle-btn {
+    display: block;
+    /* top: 16px;
+    right: 16px;
+    font-size: var(--font-medium); */
+  }
+  
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #c5e5fe;
+  }
+
+  #navbar.navbar--dark {
+    padding: 16px;
+  }
+
+  .name__logo {
+    margin-left: 10px;
+    margin-top: 0;
+    width: 75px;
+    height: 40px;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
+  }
+
+  .section {
+    padding: 16px;
+    padding-top: 70px;
+  }
+
+  .about__majors {
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+
+  .major {
+    margin-bottom: 30px;
+  }
+
+  .school__logo1, .school__logo2 {
+    width: 35px;
+    height: 35px;
+  }
+
+  .school__logo3 {
+    width: 90px;
+    height: 30px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial__avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonial__speech-bubble:nth-child(even),
+  .testimonial__speech-bubble:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
