@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, animateScroll as scroll } from 'react-scroll';
+import NavbarBackground from './NavbarBackground'
+import '../main.css'
 
 interface NavbarProps {
   to: string;
@@ -20,25 +22,28 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav id="navbar">
-      <div className="navbar__log">
-        <Link to="/" onClick={scrollToTop}>
-          <img src="./home__logo.png" alt="로고" className="name__logo" />
-        </Link>
-      </div>
-      <ul className="navbar__menu">
-        <NavbarItem to="home" label="Home" />
-        <NavbarItem to="about" label="About" />
-        <NavbarItem to="skills" label="Skills" />
-        <NavbarItem to="work" label="My Projects" />
-        <NavbarItem to="contact" label="Contact" />
-      </ul>
+    <>
+      <nav id="navbar">
+        <div className="navbar__log">
+          <Link to="/" onClick={scrollToTop}>
+            <img src="./home__logo.png" alt="로고" className="name__logo" />
+          </Link>
+        </div>
+        <ul className="navbar__menu">
+          <NavbarItem to="home" label="Home" />
+          <NavbarItem to="about" label="About" />
+          <NavbarItem to="skills" label="Skills" />
+          <NavbarItem to="work" label="My Projects" />
+          <NavbarItem to="contact" label="Contact" />
+        </ul>
 
-      {/* Toggle button */}
-      <button className="navbar__toggle-btn">
-        <i className="fa-solid fa-bars"></i>
-      </button>
-    </nav>
+        {/* Toggle button */}
+        <button className="navbar__toggle-btn">
+          <i className="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+      <NavbarBackground />
+    </>
   );
 };
 
