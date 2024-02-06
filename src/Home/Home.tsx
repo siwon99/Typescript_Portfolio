@@ -1,8 +1,12 @@
 import React from "react";
 import "../main.css"
 import HomeTyping from './HomeTyping'
+import HomeBlur from './HomeBlur'
 
 const Home: React.FC = () => {
+
+  HomeBlur('.home__container');
+  
   return (
     <section id="home">
       <div className="home__container">
