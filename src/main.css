@@ -570,7 +570,7 @@ p {
 }
 
 .arrow-up.visible :hover {
-  transform:  scale(1.1);
+  transform: scale(1.1);
 }
 
 /* For below 768px screen width */
