@@ -1,12 +1,12 @@
 import React from "react";
-import "../main.css"
-import HomeTyping from './HomeTyping'
-import HomeBlur from './HomeBlur'
+import "../main.css";
+import HomeTyping from './HomeTyping';
+import HomeBlur from './HomeBlur';
+import { Link } from 'react-scroll';
 
 const Home: React.FC = () => {
+    HomeBlur('.home__container');
 
-  HomeBlur('.home__container');
-  
   return (
     <section id="home">
       <div className="home__container">
@@ -15,7 +15,19 @@ const Home: React.FC = () => {
           <HomeTyping />
           <span className="blink">|</span>
         </div>
-        <button className="home__contact">CONTACT ME</button>
+        <button className="home__contact">
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            className="home__contact-link"
+            activeClass="active"
+            spy={true}
+            offset={-70}
+          >
+            CONTACT ME
+          </Link>
+        </button>
       </div>
     </section>
   );

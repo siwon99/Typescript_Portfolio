@@ -6,7 +6,7 @@ const ArrowUp: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const isVisible = scrollTop > 200; // 예시: 스크롤이 200px 이상 내려갔을 때 버튼이 나타나도록 설정
+      const isVisible = scrollTop > 200;
       setIsVisible(isVisible);
     };
 
