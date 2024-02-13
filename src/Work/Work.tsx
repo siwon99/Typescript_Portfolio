@@ -1,4 +1,5 @@
 import React from 'react';
+import WorkSelect from './WorkSelect';
 
 interface ProjectProps {
   href: string;
@@ -11,7 +12,9 @@ interface ProjectProps {
 
 const Work: React.FC = () => {
   return (
-    <section id="work" className="section">
+    <>
+      <WorkSelect />
+      <section id="work" className="section">
       <div className="section__container">
         <h1>My Projects</h1>
         <h3>개발 공부를 통해 진행한 프로젝트와 간략한 설명을 작성했습니다.<br />각 프로젝트에 대한 자세한 내용은 해당 사진을 클릭하여 깃허브 페이지로 이동할 수 있습니다.</h3>
@@ -167,6 +170,7 @@ const Work: React.FC = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

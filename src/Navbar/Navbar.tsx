@@ -6,11 +6,12 @@ import '../main.css'
 interface NavbarProps {
   to: string;
   label: string;
+  className: string;
 }
 
-const NavbarItem: React.FC<NavbarProps> = ({ to, label }) => (
-  <li className="navbar__menu__item" data-link={to}>
-    <Link to={to} smooth={true} duration={500}>
+const NavbarItem: React.FC<NavbarProps> = ({ to, label, className }) => (
+  <li>
+    <Link to={to} smooth={true} duration={500} className={className}>
       {label}
     </Link>
   </li>
@@ -30,11 +31,11 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
         <ul className="navbar__menu">
-          <NavbarItem to="home" label="Home" />
-          <NavbarItem to="about" label="About" />
-          <NavbarItem to="skills" label="Skills" />
-          <NavbarItem to="work" label="My Projects" />
-          <NavbarItem to="contact" label="Contact" />
+          <NavbarItem to="home" label="Home" className="navbar__menu__item" />
+          <NavbarItem to="about" label="About" className="navbar__menu__item" />
+          <NavbarItem to="skills" label="Skills" className="navbar__menu__item" />
+          <NavbarItem to="work" label="My Projects" className="navbar__menu__item" />
+          <NavbarItem to="contact" label="Contact" className="navbar__menu__item" />
         </ul>
 
         {/* Toggle button */}

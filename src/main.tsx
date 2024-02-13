@@ -6,7 +6,7 @@ import About from "./About/About.tsx";
 import Skills from "./Skills/Skills.tsx";
 import Work from "./Work/Work.tsx";
 import Contact from "./Contact/Contact.tsx";
-import ArrowUp from "./Arrow Up/Arrow Up.tsx";
+import ArrowUp from "./Arrow Up/ArrowUp.tsx";
 import "./main.css";
 
 ReactDOM.render(
