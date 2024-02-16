@@ -7,7 +7,7 @@ interface NavbarProps {
   to: string;
   label: string;
   className: string;
-  onClick?: () => void; // onClick prop 추가
+  onClick?: () => void;
 }
 
 const NavbarItem: React.FC<NavbarProps> = ({ to, label, className, onClick }) => (
