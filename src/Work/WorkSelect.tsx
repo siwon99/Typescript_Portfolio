@@ -35,11 +35,10 @@ const Work: React.FC = () => {
     return () => {
       workBtnContainer?.removeEventListener('click', handleFilterClick);
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="work">
-      {/* Work 컴포넌트의 JSX 내용 */}
     </div>
   );
 };
