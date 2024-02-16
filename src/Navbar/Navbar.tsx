@@ -19,10 +19,10 @@ const NavbarItem: React.FC<NavbarProps> = ({ to, label, className, onClick }) =>
 );
 
 const Navbar: React.FC = () => {
-  const [activeItem, setActiveItem] = useState("home"); // 초기 선택된 항목은 "home"입니다.
+  const [activeItem, setActiveItem] = useState("home");
 
   const handleItemClick = (itemName: string) => {
-    setActiveItem(itemName); // 클릭된 항목을 상태에 반영합니다.
+    setActiveItem(itemName);
   };
 
   const scrollToTop = () => {
