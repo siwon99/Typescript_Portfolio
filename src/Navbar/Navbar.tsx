@@ -45,7 +45,6 @@ const Navbar: React.FC = () => {
           <NavbarItem to="contact" label="Contact" className={activeItem === "contact" ? "navbar__menu__item active" : "navbar__menu__item"} onClick={() => handleItemClick("contact")} />
         </ul>
 
-        {/* Toggle button */}
         <button className="navbar__toggle-btn">
           <i className="fa-solid fa-bars"></i>
         </button>
