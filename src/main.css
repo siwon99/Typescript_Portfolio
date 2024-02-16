@@ -106,10 +106,6 @@ p {
   cursor: pointer;
 }
 
-#navbar a {
-  color: #3C5A91;
-}
-
 .navbar__menu {
   display: flex;
 }
