@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const Work: React.FC = () => {
-  const [selectedFilter, setSelectedFilter] = useState<string | null>('*');
-
   useEffect(() => {
-    const workBtnContainer = document.querySelector('.work__categories');
+    const workBtnContainer = document.querySelector('.work__categories') as HTMLElement;
+    const projectContainer = document.querySelector('.work__projects') as HTMLElement;
     const projects = document.querySelectorAll('.project');
 
     const handleFilterClick: EventListener = (e) => {
@@ -12,18 +11,23 @@ const Work: React.FC = () => {
       const filter = target.dataset.filter || (target.parentNode as HTMLElement)?.dataset.filter;
       if (filter == null) return;
 
-      setSelectedFilter(filter);
-      filterProjects(filter);
-    };
+      const active = document.querySelector('.category__btn.selected');
+      if (active) active.classList.remove('selected');
+      target.classList.add('selected');
 
-    const filterProjects = (filter: string) => {
-      projects.forEach((project) => {
-        if (filter === '*' || filter === (project as HTMLElement).dataset.type) {
-          project.classList.remove('invisible');
-        } else {
-          project.classList.add('invisible');
-        }
-      });
+      if (!projectContainer) return;
+
+      projectContainer.classList.add('anim-out');
+      setTimeout(() => {
+        projects.forEach((project) => {
+          if (filter === '*' || filter === (project as HTMLElement).dataset.type) {
+            project.classList.remove('invisible');
+          } else {
+            project.classList.add('invisible');
+          }
+        });
+        projectContainer.classList.remove('anim-out');
+      }, 300);
     };
 
     workBtnContainer?.addEventListener('click', handleFilterClick);
@@ -31,7 +35,7 @@ const Work: React.FC = () => {
     return () => {
       workBtnContainer?.removeEventListener('click', handleFilterClick);
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="work">
