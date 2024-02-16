@@ -21,7 +21,6 @@ const Home: React.FC = () => {
 
   return (
     <div className="home__container">
-      {/* 홈 컨텐츠 내용 */}
     </div>
   );
 };
