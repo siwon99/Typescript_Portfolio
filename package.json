@@ -12,11 +12,13 @@
     "format": "prettier --write --cache ."
   },
   "dependencies": {
+    "postcss-url": "^10.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scroll": "^1.9.0"
   },
   "devDependencies": {
+    "@types/postcss-url": "^10.0.4",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@types/react-scroll": "^1.8.10",

@@ -26,7 +26,7 @@ const Work: React.FC = () => {
         </div>
         <div className="work__projects">
           <Project
-            href="https://github.com/siwon99/Portfolio"
+            href="https://github.com/siwon99/Typescript_Portfolio"
             imgSrc="./projects/project_portfolio.png"
             alt="포트폴리오"
             title="포트포리오"
