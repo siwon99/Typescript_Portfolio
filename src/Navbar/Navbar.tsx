@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from 'react-scroll';
-import NavbarBackground from './NavbarBackground'
-import '../main.css'
+import NavbarBackground from './NavbarBackground';
+import NavbarWheel from './NavbarWheel';
+import '../main.css';
 
 interface NavbarProps {
   to: string;
@@ -20,9 +21,28 @@ const NavbarItem: React.FC<NavbarProps> = ({ to, label, className, onClick }) =>
 
 const Navbar: React.FC = () => {
   const [activeItem, setActiveItem] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleItemClick = (itemName: string) => {
     setActiveItem(itemName);
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const scrollToTop = () => {
@@ -37,7 +57,7 @@ const Navbar: React.FC = () => {
             <img src="./home__logo.png" alt="로고" className="name__logo" />
           </Link>
         </div>
-        <ul className="navbar__menu">
+        <ul className={isMenuOpen || windowWidth > 768 ? "navbar__menu open" : "navbar__menu"}>
           <NavbarItem to="home" label="Home" className={activeItem === "home" ? "navbar__menu__item active" : "navbar__menu__item"} onClick={() => handleItemClick("home")} />
           <NavbarItem to="about" label="About" className={activeItem === "about" ? "navbar__menu__item active" : "navbar__menu__item"} onClick={() => handleItemClick("about")} />
           <NavbarItem to="skills" label="Skills" className={activeItem === "skills" ? "navbar__menu__item active" : "navbar__menu__item"} onClick={() => handleItemClick("skills")} />
@@ -45,11 +65,12 @@ const Navbar: React.FC = () => {
           <NavbarItem to="contact" label="Contact" className={activeItem === "contact" ? "navbar__menu__item active" : "navbar__menu__item"} onClick={() => handleItemClick("contact")} />
         </ul>
 
-        <button className="navbar__toggle-btn">
+        <button className="navbar__toggle-btn" onClick={toggleMenu}>
           <i className="fa-solid fa-bars"></i>
         </button>
       </nav>
       <NavbarBackground />
+      <NavbarWheel />
     </>
   );
 };

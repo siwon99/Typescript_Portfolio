@@ -107,7 +107,7 @@ const About: React.FC = () => {
         <img width="55px" height="55px" src="./school/KT.png" alt="에이블스쿨" className="school__logo6" />
         <div className="school__description">
           <p className="school__name">KT 에이블스쿨 5기 AI과정</p>
-          <p className="school__period">2023.02 - 2023.08</p>
+          <p className="school__period">2024.02 - 2024.08</p>
         </div>
       </div>
 
