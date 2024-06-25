@@ -30,9 +30,6 @@ npm run dev
 ## 📆 Schedule
 2024년 2월 4일 ~ 2024년 2월 17일
 
-## 🪄Function
-링크: https://siwon99.github.io/
-
 
 
 
